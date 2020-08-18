@@ -5,7 +5,7 @@ function plot_estimation_results(ML, B_unif, B_TV, ref, lim_T1, lim_error_T1, ro
 rows=2; cols=3;
 data = cell(rows, cols);
 
-labelsize = 12;
+labelsize = 16;
 mask = ML.model_params.mask;
 
 data{1,1} = imrotate(ML.results.T1, rotation_angle);
@@ -23,8 +23,8 @@ data{2,3}(isnan(data{2,3}))=0;
 
 r_i=28;
 
-plot_width = 16.56;
-plot_height = 15;
+plot_width = 20;
+plot_height = 18;
 
 text_x_pos = 0.02;
 text_y_pos = 0.9;
