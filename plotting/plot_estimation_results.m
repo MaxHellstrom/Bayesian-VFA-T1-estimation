@@ -1,4 +1,6 @@
 function plot_estimation_results(ML, B_unif, B_TV, ref, lim_T1, lim_error_T1, rotation_angle)
+% Function for plotting the estimation results when using synthetic data with known
+% reference value
 
 rows=2; cols=3;
 data = cell(rows, cols);
@@ -40,10 +42,6 @@ side_y = scale * side_x;
 plots = cell(2,3);
 figure('Units', 'centimeters', 'Position', [0 0 plot_width plot_height])
 
-
-
-
-% PD M1
 height_ind = 10;
 
 plots{1} = subplot(2,3,1);
@@ -115,12 +113,9 @@ text(text_x_pos,text_y_pos, ['(f)'],'FontSize',labelsize,'FontWeight','Bold','Co
 
 
 h_ind = 0.04;
-
-
 plots{1}.Position = [indent_x+0*side_x, 1.4*side_y + indent_y, side_x, side_y];
 plots{2}.Position = [indent_x+1*side_x, 1.4*side_y + indent_y, side_x, side_y];
 plots{3}.Position = [indent_x+2*side_x, 1.4*side_y + indent_y, side_x, side_y];
-
 plots{4}.Position = [indent_x+0*side_x+0*h_ind, 0*side_y + indent_y, side_x, side_y];
 plots{5}.Position = [indent_x+1*side_x+0*h_ind, 0*side_y + indent_y, side_x, side_y];
 plots{6}.Position = [indent_x+2*side_x+0*h_ind, 0*side_y + indent_y, side_x, side_y];
@@ -136,4 +131,3 @@ cb_T1_error.Position(3) = cb_T1_error.Position(3) - sbar;
 cb_T1_error.Position(1) = cb_T1_error.Position(1) + 0.5* sbar;
 
 end
-
