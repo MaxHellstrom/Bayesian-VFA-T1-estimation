@@ -22,3 +22,10 @@ nWalkers = 10; % Number of MCMC walkers
 nThinning = 1; % thinning 
 inner_thinning = 8; % inner thinning
 step_size=4;
+
+% 
+plot_input = true;
+conduct_kappa_search = false;
+plot_kappa_search_results = true;
+conduct_parameter_estimation = false;
+

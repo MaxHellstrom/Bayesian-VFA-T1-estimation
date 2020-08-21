@@ -2,6 +2,7 @@ function plot_estimation_results(ML, B_unif, B_TV, ref, lim_T1, lim_error_T1, ro
 % Function for plotting the estimation results when using synthetic data with known
 % reference value
 
+set(0,'defaulttextInterpreter','latex')
 rows=2; cols=3;
 data = cell(rows, cols);
 
