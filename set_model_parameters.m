@@ -15,8 +15,7 @@ parameterMin = [minPd, minT1];
 % Typical parameters [Pd, T1] for algorithm initialization.
 typicalParameters = [10000, 1];
 
-%kappa_search = -0.5:0.01:0.99; % kappa grid search window
-kappa_search = 0.0:0.1:0.3;
+kappa_search = -0.5:0.01:0.99; % kappa grid search window
 nSamples = 128; % number of samples per MCMC walkers
 nWalkers = 10; % Number of MCMC walkers
 nThinning = 1; % thinning 
@@ -25,7 +24,7 @@ step_size=4;
 
 % 
 plot_input = true;
-conduct_kappa_search = false;
+conduct_kappa_search = false; % NOTE: very time consuming if set to true 
 plot_kappa_search_results = true;
 conduct_parameter_estimation = false;
 
