@@ -1,8 +1,8 @@
-function [WAIC, X, time_struct] = calculate_WAIC_curve(Y, B1corr, typicalParameters, parameterMin, parameterMax, mask, kappa_search, TR, FAs, nWalkers)
+function [WAIC, X, time_struct] = calculate_WAIC_curve(Y, B1corr, typicalParameters, parameterMin, parameterMax, mask, kappa_search, TR, FAs, nWalkers, inner_thinning, step_size)
 
 
 %% Construct the estimator and set properties
-MCMC = MCMCSpatial2DModel(@(x,z)(SPGRModel(x, z, TR/1000, FAs)), Y, B1corr, typicalParameters, mask, 0);
+MCMC = MCMCSpatial2DModel(@(x,z)(SPGRModel(x, z, TR, FAs)), Y, B1corr, typicalParameters, mask, 0);
 
 MCMC.TVWeight = 1;%weightsFromGradients(Y, mask);
 MCMC.parameterMin = parameterMin;
@@ -10,10 +10,10 @@ MCMC.parameterMax = parameterMax;
 MCMC.parameterNames = {'PD', 'T1'};
 MCMC.convergenceTestWindow = 100;
 MCMC.useSpatialModel = true;
-MCMC.plotFigure = figure(1); clf
+MCMC.plotFigure = figure(); clf
 MCMC.convergenceTestFraction = 0.5;
 MCMC.thinning = 1;
-MCMC.plotConvergence = figure(2); clf
+MCMC.plotConvergence = figure(); clf
 MCMC.convergenceThreshold = 0.99;
 MCMC.verbose = true;
 
