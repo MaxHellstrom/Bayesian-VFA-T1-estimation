@@ -41,7 +41,7 @@ side_x = 1/3 - indent_x/3;
 side_y = scale * side_x;
 
 plots = cell(2,3);
-figure('Units', 'centimeters', 'Position', [0 0 plot_width plot_height])
+figure('Name', 'Estimation results', 'Units', 'centimeters', 'Position', [0 0 plot_width plot_height])
 
 height_ind = 10;
 
